@@ -32,3 +32,22 @@ int list_push_front(LinkedList *list, int value){
 
     return 1;
 }
+int list_push_back(LinkedList *list, int value){
+    struct Node *node = malloc(sizeof(struct Node));
+
+    if (node == NULL){
+        return 0;
+    }
+
+    if (list->size == 0){
+        node->data = value;
+        node->next = list->head;
+        list->head = node;
+        list->size++;
+    }
+
+
+
+    list->size++;
+    return 1;
+}
