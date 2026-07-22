@@ -8,8 +8,27 @@ int main(){
 
     list_init(&spell_list);
 
+    list_print(&spell_list);
+
+    list_push_back(&spell_list, 12);
+
+    list_print(&spell_list);
+
     list_push_front(&spell_list, 15);
 
+    list_print(&spell_list);
+
+    list_push_front(&spell_list, 17);
+
+    list_print(&spell_list);
+
+    list_push_back(&spell_list, 1);
+
+    list_print(&spell_list);
+
+    list_push_front(&spell_list, 2000);
+
+    list_print(&spell_list);
 
     return 0;
 }

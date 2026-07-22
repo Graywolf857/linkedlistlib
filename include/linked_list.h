@@ -1,7 +1,7 @@
 #ifndef linked_list
 #define linked_list
 
-typedef struct{
+typedef struct Node{
     int data;
     struct Node *next;
 } Node;
@@ -16,5 +16,7 @@ void list_init(LinkedList *list);
 int list_push_front(LinkedList *list, int value);
 
 int list_push_back(LinkedList *list, int value);
+
+void list_print(const LinkedList *list);
 
 #endif
