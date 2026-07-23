@@ -34,5 +34,8 @@ int main(){
 
     list_print(&spell_list);
 
+    list_pop_front(&spell_list);
+    list_print(&spell_list);
+
     return 0;
 }

@@ -116,3 +116,29 @@ int list_insert_after(LinkedList *list, int target, int value){
     list->size++;
     return 1;
 }
+
+int list_pop_front(LinkedList *list){
+    /*
+    - Remove the first node.
+    - Free its memory.
+    - Update head.
+    - Decrement size.
+    - 1 if node was removed
+    - 0 if the list is empty
+    */
+
+    if(list->size == 0){
+        printf("The list is empty\n");
+        return 0;
+    }
+    
+    Node *old_node = list->head;
+
+    list->head = old_node->next;
+
+    free(old_node);
+
+    old_node = NULL;
+    list->size--;
+    return 1;
+}
