@@ -23,4 +23,6 @@ int list_insert_after(LinkedList *list, int target, int value);
 
 int list_pop_front(LinkedList *list);
 
+int list_remove(LinkedList *list, int value);
+
 #endif

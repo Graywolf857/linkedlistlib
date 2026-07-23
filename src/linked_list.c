@@ -142,3 +142,42 @@ int list_pop_front(LinkedList *list){
     list->size--;
     return 1;
 }
+
+int list_remove(LinkedList *list, int value){
+
+    /* remove the first occurrence of value
+     * free the removed node
+     * update links correctly
+     * decrement size
+     */
+
+    if(list->head == NULL){
+        printf("list is empty");
+        return 0;
+    }
+
+    Node *traverse = list->head;
+
+    Node *node_before = traverse;
+
+    while(traverse != NULL && traverse->data != value){
+        node_before = traverse;
+        traverse = traverse->next;
+    }
+
+    if (traverse == NULL){
+        printf("The value was not found");
+        return 0;
+    }
+
+    if(node_before == traverse){
+        list->head = traverse->next;
+    }else {
+        node_before->next = traverse->next;
+    }
+
+    free(traverse);
+
+    list->size--;
+    return 1;
+}
